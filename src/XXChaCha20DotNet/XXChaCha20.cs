@@ -33,9 +33,8 @@ public static class XXChaCha20
     
     public static void Encrypt(Span<byte> ciphertext, ReadOnlySpan<byte> plaintext, ReadOnlySpan<byte> nonce, ReadOnlySpan<byte> key)
     {
-        if (nonce.Length != NonceSize) {
-            throw new ArgumentOutOfRangeException(nameof(nonce), nonce.Length, $"{nameof(nonce)} must be {NonceSize} bytes long.");
-        }
+        Validation.EqualToSize(nameof(nonce), nonce.Length, NonceSize);
+        Validation.EqualToSize(nameof(key), key.Length, KeySize);
         Span<byte> subKey = stackalloc byte[ChaCha20.KeySize];
         HChaCha20.DeriveKey(subKey, key, nonce[..HChaCha20.NonceSize]);
         ChaCha20.Encrypt(ciphertext, plaintext, nonce[HChaCha20.NonceSize..], subKey);
