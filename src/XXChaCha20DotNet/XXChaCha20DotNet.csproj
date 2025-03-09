@@ -1,23 +1,22 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net6.0</TargetFramework>
-        <Version>1.0.0</Version>
+        <TargetFramework>net8.0</TargetFramework>
+        <Version>1.1.0</Version>
         <Authors>Samuel Lucas</Authors>
         <Description>ChaCha20 with a 224-bit nonce.</Description>
-        <Copyright>Copyright (c) 2022 Samuel Lucas</Copyright>
+        <Copyright>Copyright (c) 2022-2025 Samuel Lucas</Copyright>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <PackageProjectUrl>https://github.com/samuel-lucas6/XXChaCha20</PackageProjectUrl>
-        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <RepositoryUrl>https://github.com/samuel-lucas6/XXChaCha20</RepositoryUrl>
-        <PackageTags>chacha20 hchacha20 xchacha20</PackageTags>
+        <PackageTags>chacha20 hchacha20 xchacha20 xxchacha20 chacha20-poly1305 xchacha20-poly1305 xxchacha20-poly1305</PackageTags>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Geralt" Version="2.0.0" />
+      <PackageReference Include="Geralt" Version="3.3.0" />
     </ItemGroup>
 
 </Project>
